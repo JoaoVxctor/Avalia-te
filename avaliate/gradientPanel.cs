@@ -19,7 +19,7 @@ namespace avaliate
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            LinearGradientBrush lgb = new LinearGradientBrush(this.ClientRectangle, this.ColorTop, this.ColorBottom,300f);
+            LinearGradientBrush lgb = new LinearGradientBrush(this.ClientRectangle, this.ColorTop, this.ColorBottom,120f);
             Graphics   g = e.Graphics;
             g.FillRectangle(lgb, this.ClientRectangle);
             base.OnPaint(e);

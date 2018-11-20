@@ -49,8 +49,8 @@
             // 
             this.gradientPanel1.AutoSize = true;
             this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(80)))), ((int)(((byte)(197)))));
-            this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(63)))), ((int)(((byte)(141)))));
+            this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(55)))), ((int)(((byte)(150)))));
+            this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(50)))), ((int)(((byte)(176)))));
             this.gradientPanel1.Controls.Add(this.groupBox2);
             this.gradientPanel1.Controls.Add(this.pictureBox1);
             this.gradientPanel1.Controls.Add(this.groupBox1);
