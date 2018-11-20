@@ -1,10 +1,11 @@
 C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\avaliate.exe.config
 C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\avaliate.exe
 C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\avaliate.pdb
-C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.Form1.resources
 C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.Properties.Resources.resources
 C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.csproj.GenerateResource.cache
 C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.csproj.CoreCompileInputs.cache
 C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.exe
 C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.pdb
 C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.csprojAssemblyReference.cache
+C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.cadastro.resources
+C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.Index.resources
