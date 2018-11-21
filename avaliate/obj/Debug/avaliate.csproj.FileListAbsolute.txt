@@ -9,3 +9,5 @@ C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.pdb
 C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.csprojAssemblyReference.cache
 C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.cadastro.resources
 C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.Index.resources
+C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.Menu.resources
+C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.CadastroQuestao.resources
