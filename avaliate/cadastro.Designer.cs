@@ -121,9 +121,9 @@
             this.label6.ForeColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(475, 155);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 33);
+            this.label6.Size = new System.Drawing.Size(182, 33);
             this.label6.TabIndex = 20;
-            this.label6.Text = "E-Mail ";
+            this.label6.Text = "Nível de Ensino";
             // 
             // textBox5
             // 
@@ -168,16 +168,16 @@
             this.label4.Size = new System.Drawing.Size(84, 33);
             this.label4.TabIndex = 16;
             this.label4.Text = "Senha";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.Gray;
-            this.textBox3.Location = new System.Drawing.Point(481, 87);
+            this.textBox3.Location = new System.Drawing.Point(481, 93);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(388, 40);
             this.textBox3.TabIndex = 15;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
             // 
@@ -187,9 +187,9 @@
             this.label3.ForeColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(475, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 33);
+            this.label3.Size = new System.Drawing.Size(86, 33);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Sobrenome";
+            this.label3.Text = "E-Mail";
             // 
             // textBox2
             // 
@@ -229,9 +229,9 @@
             this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(24, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 33);
+            this.label2.Size = new System.Drawing.Size(100, 33);
             this.label2.TabIndex = 10;
-            this.label2.Text = "E-Mail ";
+            this.label2.Text = "Matéria";
             // 
             // gradientPanel2
             // 

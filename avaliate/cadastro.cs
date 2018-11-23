@@ -17,11 +17,6 @@ namespace avaliate
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void gradientPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -31,5 +26,11 @@ namespace avaliate
         {
 
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
