@@ -106,9 +106,15 @@ namespace avaliate
         {
             int i=0;
             var fonte =  new Font("Times New Roman", 14);
-            foreach (string item in listBox2.Items){ 
+           
 
-            e.Graphics.DrawString(listBox2.Items[i].ToString(), fonte, Brushes.Black, new PointF(100, i*50));
+            //           Bitmap bm = new Bitmap(2480, 800);
+            //          pictureBox1.DrawToBitmap(bm, new Rectangle(100, 0, pictureBox1.Width, pictureBox1.Height
+            e.Graphics.DrawImage(pictureBox1.Image, 0, 0 );
+            //              bm.Dispose();
+            foreach (string item in listBox2.Items){
+
+            e.Graphics.DrawString(listBox2.Items[i].ToString(), fonte, Brushes.Black, new PointF(100, i*50 + pictureBox1.Image.Height));
             i++;
 
             }
@@ -119,5 +125,18 @@ namespace avaliate
             if (printPreviewDialog.ShowDialog() == DialogResult.OK)
                 printDocument.Print();
         }
+
+        private void header_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog()
+            {
+                Filter =  "PNG|*png" , ValidateNames = true 
+            })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                    pictureBox1.Image = Image.FromFile(ofd.FileName);
+            }
+        }
+
     }
 }
