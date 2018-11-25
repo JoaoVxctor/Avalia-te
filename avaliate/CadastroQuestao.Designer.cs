@@ -32,14 +32,14 @@
             this.gradientPanel1 = new avaliate.gradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.resposta = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.enunciado = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tipoQuestao = new System.Windows.Forms.ComboBox();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -73,12 +73,12 @@
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.richTextBox2);
+            this.groupBox1.Controls.Add(this.resposta);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.enunciado);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.tipoQuestao);
             this.groupBox1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(28, 118);
@@ -87,6 +87,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastrar Questão";
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(165, 509);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(251, 40);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -100,14 +111,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // richTextBox2
+            // resposta
             // 
-            this.richTextBox2.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(41, 345);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(646, 128);
-            this.richTextBox2.TabIndex = 6;
-            this.richTextBox2.Text = "";
+            this.resposta.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resposta.Location = new System.Drawing.Point(41, 345);
+            this.resposta.Name = "resposta";
+            this.resposta.Size = new System.Drawing.Size(646, 128);
+            this.resposta.TabIndex = 6;
+            this.resposta.Text = "";
             // 
             // label3
             // 
@@ -116,9 +127,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(35, 309);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 33);
+            this.label3.Size = new System.Drawing.Size(122, 33);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Respostas:";
+            this.label3.Text = "Resposta:";
             // 
             // label2
             // 
@@ -130,14 +141,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Enunciado:";
             // 
-            // richTextBox1
+            // enunciado
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(41, 178);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(646, 128);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.enunciado.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enunciado.Location = new System.Drawing.Point(41, 178);
+            this.enunciado.Name = "enunciado";
+            this.enunciado.Size = new System.Drawing.Size(646, 128);
+            this.enunciado.TabIndex = 3;
+            this.enunciado.Text = "";
             // 
             // label1
             // 
@@ -149,32 +160,20 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Tipo da Questão : ";
             // 
-            // comboBox1
+            // tipoQuestao
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.tipoQuestao.BackColor = System.Drawing.Color.White;
+            this.tipoQuestao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tipoQuestao.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipoQuestao.FormattingEnabled = true;
+            this.tipoQuestao.Items.AddRange(new object[] {
             "Discertativa",
             "Alternativa",
             "Relação"});
-            this.comboBox1.Location = new System.Drawing.Point(41, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(646, 41);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(165, 509);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(251, 40);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tipoQuestao.Location = new System.Drawing.Point(41, 86);
+            this.tipoQuestao.Name = "tipoQuestao";
+            this.tipoQuestao.Size = new System.Drawing.Size(646, 41);
+            this.tipoQuestao.TabIndex = 1;
             // 
             // CadastroQuestao
             // 
@@ -197,11 +196,11 @@
 
         private gradientPanel gradientPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.ComboBox tipoQuestao;
+        private System.Windows.Forms.RichTextBox resposta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox enunciado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -21,5 +21,13 @@ namespace avaliate
         {
             greetingMessage.Text = "Bem Vind@, ";
         }
+
+        private void cadastrarQuestoes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var cadastrarQuestoes = new CadastroQuestao();
+            cadastrarQuestoes.Closed += (s, args) => this.Close();
+            cadastrarQuestoes.Show();
+        }
     }
 }

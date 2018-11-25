@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.gradientPanel1 = new avaliate.gradientPanel();
+            this.greetingMessage = new System.Windows.Forms.Label();
             this.sair = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -37,7 +38,6 @@
             this.salvarProva = new System.Windows.Forms.Button();
             this.montarProva = new System.Windows.Forms.Button();
             this.cadastrarQuestoes = new System.Windows.Forms.Button();
-            this.greetingMessage = new System.Windows.Forms.Label();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -55,6 +55,17 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(712, 618);
             this.gradientPanel1.TabIndex = 0;
+            // 
+            // greetingMessage
+            // 
+            this.greetingMessage.AutoSize = true;
+            this.greetingMessage.BackColor = System.Drawing.Color.Transparent;
+            this.greetingMessage.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.greetingMessage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.greetingMessage.Location = new System.Drawing.Point(471, 147);
+            this.greetingMessage.Name = "greetingMessage";
+            this.greetingMessage.Size = new System.Drawing.Size(0, 29);
+            this.greetingMessage.TabIndex = 9;
             // 
             // sair
             // 
@@ -150,17 +161,7 @@
             this.cadastrarQuestoes.TabIndex = 0;
             this.cadastrarQuestoes.Text = "Cadastrar Questões";
             this.cadastrarQuestoes.UseVisualStyleBackColor = true;
-            // 
-            // greetingMessage
-            // 
-            this.greetingMessage.AutoSize = true;
-            this.greetingMessage.BackColor = System.Drawing.Color.Transparent;
-            this.greetingMessage.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.greetingMessage.ForeColor = System.Drawing.Color.Gainsboro;
-            this.greetingMessage.Location = new System.Drawing.Point(471, 147);
-            this.greetingMessage.Name = "greetingMessage";
-            this.greetingMessage.Size = new System.Drawing.Size(0, 29);
-            this.greetingMessage.TabIndex = 9;
+            this.cadastrarQuestoes.Click += new System.EventHandler(this.cadastrarQuestoes_Click);
             // 
             // Menu
             // 

@@ -2,9 +2,7 @@
 
 CREATE TABLE IF NOT EXISTS professor(
 	id SERIAL NOT NULL PRIMARY KEY,
-	nome char(40),
-	sobrenome char(50),
-	email char(50),
+	nome char(40),	email char(50),
 	senha char(20)
 
 );
@@ -48,9 +46,9 @@ CREATE TABLE IF NOT EXISTS conjuncao(
 
 --------------------- INSERTS ----------------------------
 INSERT INTO professor( nome, sobrenome, email, senha) VALUES 
-('LUAN', 'MICHEL','luan.michel7@gmail.com','luanzinhomichel0102'),
-('GUSTAVO', 'RAMIRES','guramires2000@gmail.com','32571553'),
-('CARLOS', 'EDUARDO','markjones@gmail.com','toddynho123')
+('LUAN MICHEL','luan.michel7@gmail.com','luanzinhomichel0102'),
+('GUSTAVO RAMIRES','guramires2000@gmail.com','32571553'),
+('CARLOS EDUARDO','markjones@gmail.com','toddynho123')
 ;
 
 INSERT INTO materia(nome) VALUES 
@@ -85,3 +83,16 @@ INSERT INTO conjuncao(  fk_professor, fk_materia, fk_nivelEnsino) VALUES
 (3,2,1),
 (3,3,1)
 ;
+
+CREATE TABLE questao_materia_nivelensino (
+id serial not null primary key,
+fk_questao int,
+FOREIGN KEY (fk_questao) references questoes(id),
+fk_materia int,
+FOREIGN KEY (fk_materia) references materia(id),
+fk_nivelensino int,
+FOREIGN KEY (fk_nivelensino) references nivelensino(id)
+)
+
+INSERT INTO questao_materia_nivelensino (fk_questao, fk_materia, fk_nivelensino)
+values(1, 3, 2), (2, 3, 2), (3, 3, 2), (4, 3, 2), (5, 3, 2);

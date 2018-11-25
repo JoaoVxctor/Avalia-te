@@ -32,21 +32,21 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.voltarMenu = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.nivelEnsino = new System.Windows.Forms.ListBox();
             this.cadastrar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.confirmarSenha = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.senha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel2 = new avaliate.gradientPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.materia = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
@@ -67,19 +67,19 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.materia);
             this.groupBox1.Controls.Add(this.voltarMenu);
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.nivelEnsino);
             this.groupBox1.Controls.Add(this.cadastrar);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.confirmarSenha);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.senha);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.email);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.nome);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -109,21 +109,17 @@
             this.voltarMenu.UseVisualStyleBackColor = false;
             this.voltarMenu.Click += new System.EventHandler(this.voltarMenu_Click);
             // 
-            // listBox1
+            // nivelEnsino
             // 
-            this.listBox1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 33;
-            this.listBox1.Items.AddRange(new object[] {
-            "Ensino Superior",
-            "Ensino Médio",
-            "Ensino Fundamental"});
-            this.listBox1.Location = new System.Drawing.Point(481, 191);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(388, 37);
-            this.listBox1.TabIndex = 22;
-            this.listBox1.UseWaitCursor = true;
+            this.nivelEnsino.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nivelEnsino.FormattingEnabled = true;
+            this.nivelEnsino.ItemHeight = 33;
+            this.nivelEnsino.Location = new System.Drawing.Point(481, 191);
+            this.nivelEnsino.Name = "nivelEnsino";
+            this.nivelEnsino.ScrollAlwaysVisible = true;
+            this.nivelEnsino.Size = new System.Drawing.Size(388, 37);
+            this.nivelEnsino.TabIndex = 22;
+            this.nivelEnsino.UseWaitCursor = true;
             // 
             // cadastrar
             // 
@@ -156,15 +152,15 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Nível de Ensino";
             // 
-            // textBox5
+            // confirmarSenha
             // 
-            this.textBox5.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
-            this.textBox5.Location = new System.Drawing.Point(481, 289);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(388, 40);
-            this.textBox5.TabIndex = 19;
-            this.textBox5.UseSystemPasswordChar = true;
+            this.confirmarSenha.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmarSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.confirmarSenha.Location = new System.Drawing.Point(481, 289);
+            this.confirmarSenha.Name = "confirmarSenha";
+            this.confirmarSenha.Size = new System.Drawing.Size(388, 40);
+            this.confirmarSenha.TabIndex = 19;
+            this.confirmarSenha.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -178,15 +174,15 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "Confirme a senha";
             // 
-            // textBox4
+            // senha
             // 
-            this.textBox4.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Gray;
-            this.textBox4.Location = new System.Drawing.Point(30, 289);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(388, 40);
-            this.textBox4.TabIndex = 17;
-            this.textBox4.UseSystemPasswordChar = true;
+            this.senha.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.senha.ForeColor = System.Drawing.Color.Gray;
+            this.senha.Location = new System.Drawing.Point(30, 289);
+            this.senha.Name = "senha";
+            this.senha.Size = new System.Drawing.Size(388, 40);
+            this.senha.TabIndex = 17;
+            this.senha.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -200,15 +196,15 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Senha";
             // 
-            // textBox3
+            // email
             // 
-            this.textBox3.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Gray;
-            this.textBox3.Location = new System.Drawing.Point(481, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(388, 40);
-            this.textBox3.TabIndex = 15;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.email.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email.ForeColor = System.Drawing.Color.Gray;
+            this.email.Location = new System.Drawing.Point(481, 93);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(388, 40);
+            this.email.TabIndex = 15;
+            this.email.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
             // 
@@ -222,14 +218,14 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "E-Mail";
             // 
-            // textBox2
+            // nome
             // 
-            this.textBox2.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Gray;
-            this.textBox2.Location = new System.Drawing.Point(31, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(388, 40);
-            this.textBox2.TabIndex = 13;
+            this.nome.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nome.ForeColor = System.Drawing.Color.Gray;
+            this.nome.Location = new System.Drawing.Point(31, 93);
+            this.nome.Name = "nome";
+            this.nome.Size = new System.Drawing.Size(388, 40);
+            this.nome.TabIndex = 13;
             // 
             // label1
             // 
@@ -242,15 +238,6 @@
             this.label1.Size = new System.Drawing.Size(83, 33);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nome";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(30, 191);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(388, 40);
-            this.textBox1.TabIndex = 11;
             // 
             // label2
             // 
@@ -288,6 +275,18 @@
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
             // 
+            // materia
+            // 
+            this.materia.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materia.FormattingEnabled = true;
+            this.materia.ItemHeight = 33;
+            this.materia.Location = new System.Drawing.Point(31, 191);
+            this.materia.Name = "materia";
+            this.materia.ScrollAlwaysVisible = true;
+            this.materia.Size = new System.Drawing.Size(388, 37);
+            this.materia.TabIndex = 24;
+            this.materia.UseWaitCursor = true;
+            // 
             // cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,21 +310,21 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox confirmarSenha;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox senha;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nome;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private gradientPanel gradientPanel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button cadastrar;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox nivelEnsino;
         private System.Windows.Forms.Button voltarMenu;
+        private System.Windows.Forms.ListBox materia;
     }
 }

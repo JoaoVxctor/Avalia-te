@@ -16,7 +16,7 @@ namespace avaliate
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MontagemProva());
+            Application.Run(new Index());
         }
     }
 }

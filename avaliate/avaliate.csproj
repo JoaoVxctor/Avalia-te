@@ -83,6 +83,7 @@
     <Compile Include="gradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="LoginInfo.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -13,14 +13,11 @@ namespace avaliate
 {
     public partial class CadastroQuestao : Form
     {
+        string connString = @"Host=127.0.0.1;Username=postgres;Password=ifsp;Database=postgres";
+
         public CadastroQuestao()
         {
             InitializeComponent();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void gradientPanel1_Paint(object sender, PaintEventArgs e)
@@ -35,60 +32,67 @@ namespace avaliate
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //string de conexão com o banco de dados
-            string connString = @"Host=127.0.0.1;Username=postgres;Password=ifsp;Database=postgres";
-
-            //tenta criar uma conexão com o banco
-            using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+            if (!verificaCampos())
             {
-                //abre a conexão com o banco
-                conn.Open();
-
-                // Executa uma consulta que não retorna nenhum valor
-                // Insere um registro na tabela
-                /*                using (NpgsqlCommand cmd = new NpgsqlCommand())
-                                {
-                                    cmd.Connection = conn; //atribui uma conexão ao comando (obrigatorio)
-
-                                    //variáveis contendo os dados que queremos inserir no banco
-                                    string nome = "José Campos Almeida";
-                                    string cpf = "11122233344";
-                                    string endereco = "Rua Jundiaí";
-                                    string cep = "11111222";
-
-                                    //seta o comando sql que será executado
-                                    cmd.CommandText = "INSERT INTO tb_cliente (nome, cpf, endereco, cep)" +
-                                                      "VALUES ( @nome, @cpf, @endereco, @cep)";
-
-                                    //seta os parametros que deverão ser passados para a consulta sql
-                                    cmd.Parameters.AddWithValue("nome", nome);
-                                    cmd.Parameters.AddWithValue("cpf", cpf);
-                                    cmd.Parameters.AddWithValue("endereco", endereco);
-                                    cmd.Parameters.AddWithValue("cep", cep);
-
-                                    //executa o comando / consulta sql
-                                    cmd.ExecuteNonQuery();
-                                }*/
-
-                //Executa uma consulta que retorna uma tabela
-                // Lê todas a linhas da tabela
-                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM TESTE", conn)) //comando de seleção
-                using (NpgsqlDataReader reader = cmd.ExecuteReader()) //executa o comando que retornará uma tabela
+                MessageBox.Show("Por favor, preencha todos os campos antes de prosseguir");
+            }
+            else
+            {
+                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
-                    int numLinha = 0;
+                    conn.Open();
 
-                    //lê uma linha
-                    while (reader.Read())
+                    using (NpgsqlCommand cmd = new NpgsqlCommand())
                     {
+                        cmd.Connection = conn;
 
-                        Console.WriteLine("Linha: " + numLinha++);
-                        Console.WriteLine("\tid: " + reader.GetInt32(0));
-                        Console.WriteLine("\tteste: " + reader.GetString(1));
-                        Console.WriteLine();
+                        cmd.CommandText = "INSERT INTO questoes (fk_professor, tipo, enunciado, resposta)" +
+                                "VALUES ( @fk_professor, @tipo, @enunciado, @resposta)";
 
+                        cmd.Parameters.AddWithValue("fk_professor", LoginInfo.id);
+                        cmd.Parameters.AddWithValue("tipo", tipoQuestao.GetItemText(tipoQuestao.SelectedItem));
+                        cmd.Parameters.AddWithValue("enunciado", enunciado.Text);
+                        cmd.Parameters.AddWithValue("resposta", resposta.Text);
+
+                        cmd.ExecuteNonQuery();
                     }
                 }
+
+                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    using (NpgsqlCommand cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+
+                        cmd.CommandText = "INSERT INTO questao_materia_nivelensino (fk_questao, fk_materia, fk_nivelensino)" +
+                                "VALUES ( (SELECT id FROM questoes WHERE fk_professor = @fk_professor AND enunciado = @enunciado), @fk_materia, @fk_nivelensino)";
+
+                        cmd.Parameters.AddWithValue("fk_professor", LoginInfo.id);
+                        cmd.Parameters.AddWithValue("fk_materia", LoginInfo.materia);
+                        cmd.Parameters.AddWithValue("enunciado", enunciado.Text);
+                        cmd.Parameters.AddWithValue("fk_nivelensino", LoginInfo.nivelEnsino);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Questão cadastrada com sucesso");
             }
+        }
+
+        private Boolean verificaCampos()
+        {
+            if (tipoQuestao.GetItemText(tipoQuestao.SelectedItem) == null || tipoQuestao.GetItemText(tipoQuestao.SelectedItem) == "")
+                return false;
+
+            if (enunciado.Text == null || enunciado.Text == "")
+                return false;
+
+            if (resposta.Text == null || resposta.Text == "")
+                return false;
+
+            return true;
         }
     }
 }
