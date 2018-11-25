@@ -32,5 +32,20 @@ namespace avaliate
 
         }
 
+        private void voltarMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var index = new Index();
+            index.Closed += (s, args) => this.Close();
+            index.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var menu = new Menu();
+            menu.Closed += (s, args) => this.Close();
+            menu.Show();
+        }
     }
 }

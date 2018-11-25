@@ -16,5 +16,10 @@ namespace avaliate
         {
             InitializeComponent();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            greetingMessage.Text = "Bem Vind@, ";
+        }
     }
 }

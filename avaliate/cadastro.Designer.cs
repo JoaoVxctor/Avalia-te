@@ -31,8 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.voltarMenu = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.cadastrar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,8 +67,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.voltarMenu);
+            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.cadastrar);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label5);
@@ -88,30 +90,59 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
             // 
-            // button2
+            // voltarMenu
             // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(626, 369);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 45);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Cadastre-se";
-            this.button2.UseVisualStyleBackColor = false;
+            this.voltarMenu.AutoSize = true;
+            this.voltarMenu.BackColor = System.Drawing.Color.Transparent;
+            this.voltarMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.voltarMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.voltarMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.voltarMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.voltarMenu.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.voltarMenu.ForeColor = System.Drawing.Color.White;
+            this.voltarMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.voltarMenu.Location = new System.Drawing.Point(462, 369);
+            this.voltarMenu.Name = "voltarMenu";
+            this.voltarMenu.Size = new System.Drawing.Size(195, 45);
+            this.voltarMenu.TabIndex = 23;
+            this.voltarMenu.Text = "Cancelar";
+            this.voltarMenu.UseVisualStyleBackColor = false;
+            this.voltarMenu.Click += new System.EventHandler(this.voltarMenu_Click);
             // 
-            // textBox6
+            // listBox1
             // 
-            this.textBox6.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Gray;
-            this.textBox6.Location = new System.Drawing.Point(481, 191);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(388, 40);
-            this.textBox6.TabIndex = 21;
+            this.listBox1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 33;
+            this.listBox1.Items.AddRange(new object[] {
+            "Ensino Superior",
+            "Ensino Médio",
+            "Ensino Fundamental"});
+            this.listBox1.Location = new System.Drawing.Point(481, 191);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
+            this.listBox1.Size = new System.Drawing.Size(388, 37);
+            this.listBox1.TabIndex = 22;
+            this.listBox1.UseWaitCursor = true;
+            // 
+            // cadastrar
+            // 
+            this.cadastrar.AutoSize = true;
+            this.cadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.cadastrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.cadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.cadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cadastrar.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cadastrar.ForeColor = System.Drawing.Color.White;
+            this.cadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cadastrar.Location = new System.Drawing.Point(674, 369);
+            this.cadastrar.Name = "cadastrar";
+            this.cadastrar.Size = new System.Drawing.Size(195, 45);
+            this.cadastrar.TabIndex = 21;
+            this.cadastrar.Text = "Cadastrar-se";
+            this.cadastrar.UseVisualStyleBackColor = false;
+            this.cadastrar.Click += new System.EventHandler(this.button2_Click);
             // 
             // label6
             // 
@@ -292,8 +323,9 @@
         private System.Windows.Forms.Label label2;
         private gradientPanel gradientPanel2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cadastrar;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button voltarMenu;
     }
 }

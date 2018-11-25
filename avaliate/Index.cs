@@ -34,7 +34,10 @@ namespace avaliate
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var cadastro = new cadastro();
+            cadastro.Closed += (s, args) => this.Close();
+            cadastro.Show();
         }
     }
 }
