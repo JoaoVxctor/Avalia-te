@@ -19,7 +19,7 @@ namespace avaliate
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            greetingMessage.Text = "Bem Vind@, ";
+            greetingMessage.Text = "Bem Vindo(a), " + LoginInfo.nome;
         }
 
         private void cadastrarQuestoes_Click(object sender, EventArgs e)

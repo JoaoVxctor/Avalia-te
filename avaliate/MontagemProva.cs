@@ -7,20 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace avaliate
 {
     public partial class MontagemProva : Form
     {
+        string connString = @"Host=127.0.0.1;Username=postgres;Password=ifsp;Database=postgres";
+
         int index = 0;
 
         public MontagemProva()
         {
             InitializeComponent();
-            string[] items = new string[] {"QUESTÃO 1","QUESTÃO 2","QUESTÃO 3","QUESTÃO 4" };
-            listBox1.Items.AddRange(items);
-           
-        }
+            //string[] items = new string[] {"QUESTÃO 1","QUESTÃO 2","QUESTÃO 3","QUESTÃO 4" };
+            //listBox1.Items.AddRange(items);
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT id, titulo FROM professor WHERE id IN(" +
+                    "SELECT fk_questao FROM questao_materia_nivelensino WHERE fk_materia = @materia AND fk_nivelensino @nivelensino)", conn))
+                {
+                    cmd.Parameters.AddWithValue("materia", LoginInfo.materia);
+                    cmd.Parameters.AddWithValue("nivelensino", LoginInfo.nivelEnsino);
+
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        listBox1.DisplayMember = "titulo";
+                        listBox1.ValueMember = "id";
+
+                        while (reader.Read())
+                        {
+                            listBox1.Items.Add(new Questao { id = reader.GetInt32(0).ToString(), titulo = reader.GetString(1) });
+                        }
+                    }
+                }
+            }
+
+
+            }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -63,8 +90,6 @@ namespace avaliate
             ListBox list2 = sender as ListBox;
             list2.Items.Add(e.Data.GetData(typeof(System.String)).ToString());
             listBox1.Items.RemoveAt(index);
-            
-
         }
 
         private void listBox1_DragEnter(object sender, DragEventArgs e)
@@ -138,5 +163,10 @@ namespace avaliate
             }
         }
 
+        public class Questao
+        {
+            public string titulo { get; set; }
+            public string id { get; set; }
+        }
     }
 }

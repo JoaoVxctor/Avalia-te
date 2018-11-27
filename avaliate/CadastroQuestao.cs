@@ -46,13 +46,14 @@ namespace avaliate
                     {
                         cmd.Connection = conn;
 
-                        cmd.CommandText = "INSERT INTO questoes (fk_professor, tipo, enunciado, resposta)" +
-                                "VALUES ( @fk_professor, @tipo, @enunciado, @resposta)";
+                        cmd.CommandText = "INSERT INTO questoes (fk_professor, tipo, enunciado, resposta, titulo)" +
+                                "VALUES ( @fk_professor, @tipo, @enunciado, @resposta, @titulo)";
 
                         cmd.Parameters.AddWithValue("fk_professor", LoginInfo.id);
                         cmd.Parameters.AddWithValue("tipo", tipoQuestao.GetItemText(tipoQuestao.SelectedItem));
                         cmd.Parameters.AddWithValue("enunciado", enunciado.Text);
                         cmd.Parameters.AddWithValue("resposta", resposta.Text);
+                        cmd.Parameters.AddWithValue("titulo", titulo.Text);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -87,6 +88,9 @@ namespace avaliate
                 return false;
 
             if (enunciado.Text == null || enunciado.Text == "")
+                return false;
+
+            if (titulo.Text == null || titulo.Text == "")
                 return false;
 
             if (resposta.Text == null || resposta.Text == "")

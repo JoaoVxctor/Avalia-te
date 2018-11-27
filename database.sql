@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS questoes(
 	tipo char (34),
 	enunciado char (500),
 	resposta char (400),
-	CONSTRAINT fk_professor FOREIGN KEY (fk_professor)
+ titulo char(40),	CONSTRAINT fk_professor FOREIGN KEY (fk_professor)
 	REFERENCES professor(id)
 	
 	
@@ -66,11 +66,11 @@ INSERT INTO nivelEnsino(nome) VALUES
 ;
 
 INSERT INTO questoes( fk_professor, tipo, enunciado, resposta) VALUES 
-(1,'dissertativa' , '1+1', '2'),
-(2,'dissertativa' , '1+2', '3'),
-(3,'dissertativa' , '1+3', '4'),
-(1,'dissertativa' , '1+4', '5'),
-(2,'dissertativa' , '1+5', '6');
+(1,'dissertativa' , '1+1', '2', '1+1'),
+(2,'dissertativa' , '1+2', '3', '1+2'),
+(3,'dissertativa' , '1+3', '4', '1+3'),
+(1,'dissertativa' , '1+4', '5', '1+4'),
+(2,'dissertativa' , '1+5', '6', '1+5');
 
 INSERT INTO conjuncao(  fk_professor, fk_materia, fk_nivelEnsino) VALUES 
 (1,1,1),
