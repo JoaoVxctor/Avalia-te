@@ -13,7 +13,8 @@ namespace avaliate
 {
     public partial class CadastroQuestao : Form
     {
-        string connString = @"Host=127.0.0.1;Username=postgres;Password=ifsp;Database=postgres";
+        Conexao con = new Conexao();
+
 
         public CadastroQuestao()
         {
@@ -38,7 +39,7 @@ namespace avaliate
             }
             else
             {
-                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+                using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
                 {
                     conn.Open();
 
@@ -59,7 +60,7 @@ namespace avaliate
                     }
                 }
 
-                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+                using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
                 {
                     conn.Open();
 
@@ -93,8 +94,8 @@ namespace avaliate
             if (titulo.Text == null || titulo.Text == "")
                 return false;
 
-            if (resposta.Text == null || resposta.Text == "")
-                return false;
+//            if (resposta.Text == null || resposta.Text == "")
+ //               return false;
 
             return true;
         }

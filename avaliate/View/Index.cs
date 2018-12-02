@@ -15,12 +15,11 @@ namespace avaliate
     {
         Conexao con = new Conexao();
        
-        Boolean contaExiste = false;
+      
 
         public Index()
         {
             InitializeComponent();
-            con.createDB();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,17 +27,7 @@ namespace avaliate
            
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void Cadastro_Click(object sender, EventArgs e)
         {
             this.Hide();
             var cadastro = new cadastro();
@@ -46,7 +35,7 @@ namespace avaliate
             cadastro.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void login_Click(object sender, EventArgs e)
         {
             if (!verificaCampos())
             {
@@ -54,51 +43,13 @@ namespace avaliate
             }
             else
             {
-                using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
-                {
-                    conn.Open();
-
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT id, nome FROM professor WHERE email = @email AND senha = @senha", conn))
-                    {
-                        cmd.Parameters.AddWithValue("email", email.Text);
-                        cmd.Parameters.AddWithValue("senha", senha.Text);
-
-                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                LoginInfo.id = reader.GetInt32(0);
-                                LoginInfo.nome = reader.GetString(1);
-                                contaExiste = true;
-                            }
-                        }
-                    }
-
-                    if (contaExiste)
-                    {
-                        using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT fk_materia, fk_nivelensino FROM conjuncao WHERE fk_professor = @fk_professor", conn))
-                        {
-                            cmd.Parameters.AddWithValue("fk_professor", LoginInfo.id);
-
-                            using (NpgsqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    LoginInfo.materia = reader.GetInt32(0);
-                                    LoginInfo.nivelEnsino = reader.GetInt32(1);
-                                }
-                            }
-                        }
-
-                        this.Hide();
-                        var menu = new Menu();
-                        menu.Closed += (s, args) => this.Close();
-                        menu.Show();
-                    }
-                    else {
-                        MessageBox.Show("Usuario ou senha inválidos");
-                    }
+               if( con.login( con,email.Text, senha.Text)) { 
+                this.Hide();
+                var menu = new Menu();
+                menu.Closed += (s, args) => this.Close();
+                menu.Show();
                 }
+
             }
         }
 

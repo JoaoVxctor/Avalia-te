@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS conjuncao(
 
 
 --------------------- INSERTS ----------------------------
-INSERT INTO professor( nome, sobrenome, email, senha) VALUES 
+INSERT INTO professor( nome, email, senha) VALUES 
 ('LUAN MICHEL','luan.michel7@gmail.com','luanzinhomichel0102'),
 ('GUSTAVO RAMIRES','guramires2000@gmail.com','32571553'),
 ('CARLOS EDUARDO','markjones@gmail.com','toddynho123')
@@ -65,7 +65,7 @@ INSERT INTO nivelEnsino(nome) VALUES
 ('Ensino Superior')
 ;
 
-INSERT INTO questoes( fk_professor, tipo, enunciado, resposta) VALUES 
+INSERT INTO questoes( fk_professor, tipo, enunciado, resposta,titulo) VALUES 
 (1,'dissertativa' , '1+1', '2', '1+1'),
 (2,'dissertativa' , '1+2', '3', '1+2'),
 (3,'dissertativa' , '1+3', '4', '1+3'),

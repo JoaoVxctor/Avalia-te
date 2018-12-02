@@ -15,7 +15,7 @@ namespace avaliate
     {
         Questao questao;
 
-        string connString = @"Host=127.0.0.1;Username=postgres;Password=ifsp;Database=postgres";
+        Conexao con = new Conexao();
 
         int index = 0;
 
@@ -25,7 +25,7 @@ namespace avaliate
             //string[] items = new string[] {"QUESTÃO 1","QUESTÃO 2","QUESTÃO 3","QUESTÃO 4" };
             //listBox1.Items.AddRange(items);
 
-            using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
             {
                 conn.Open();
 

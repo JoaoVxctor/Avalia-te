@@ -74,17 +74,17 @@
     <Compile Include="View\CadastroQuestao.Designer.cs">
       <DependentUpon>CadastroQuestao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Conexao.cs" />
+    <Compile Include="Control\Conexao.cs" />
     <Compile Include="View\Index.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
-    <Compile Include="gradientPanel.cs">
+    <Compile Include="Control\gradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LoginInfo.cs" />
+    <Compile Include="Control\LoginInfo.cs" />
     <Compile Include="View\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,7 +97,7 @@
     <Compile Include="View\MontagemProva.Designer.cs">
       <DependentUpon>MontagemProva.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Control\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\cadastro.resx">
       <DependentUpon>cadastro.cs</DependentUpon>
@@ -123,7 +123,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
+    <None Include="Control\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -135,7 +135,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Control\App.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

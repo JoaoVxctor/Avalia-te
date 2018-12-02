@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.gradientPanel1 = new avaliate.gradientPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Cadastro = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.email = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.login = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.senha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             // groupBox2
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.Cadastro);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox2.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
@@ -74,23 +74,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastre-se";
             // 
-            // button2
+            // Cadastro
             // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(169, 52);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(229, 57);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Cadastre-se";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Cadastro.AutoSize = true;
+            this.Cadastro.BackColor = System.Drawing.Color.Transparent;
+            this.Cadastro.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.Cadastro.FlatAppearance.BorderSize = 2;
+            this.Cadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Cadastro.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cadastro.ForeColor = System.Drawing.Color.White;
+            this.Cadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Cadastro.Location = new System.Drawing.Point(169, 52);
+            this.Cadastro.Name = "Cadastro";
+            this.Cadastro.Size = new System.Drawing.Size(229, 57);
+            this.Cadastro.TabIndex = 6;
+            this.Cadastro.Text = "Cadastre-se";
+            this.Cadastro.UseVisualStyleBackColor = false;
+            this.Cadastro.Click += new System.EventHandler(this.Cadastro_Click);
             // 
             // pictureBox1
             // 
@@ -105,7 +105,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.email);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.login);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.senha);
             this.groupBox1.Controls.Add(this.label3);
@@ -121,6 +121,7 @@
             // 
             // email
             // 
+            this.email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.email.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(59)))), ((int)(((byte)(209)))));
             this.email.Location = new System.Drawing.Point(134, 95);
@@ -128,21 +129,21 @@
             this.email.Size = new System.Drawing.Size(388, 40);
             this.email.TabIndex = 2;
             // 
-            // button1
+            // login
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(195, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 49);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.login.BackColor = System.Drawing.Color.Transparent;
+            this.login.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.login.FlatAppearance.BorderSize = 2;
+            this.login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.login.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login.ForeColor = System.Drawing.Color.Transparent;
+            this.login.Location = new System.Drawing.Point(195, 267);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(143, 49);
+            this.login.TabIndex = 5;
+            this.login.Text = "Login";
+            this.login.UseVisualStyleBackColor = false;
+            this.login.Click += new System.EventHandler(this.login_Click);
             // 
             // label2
             // 
@@ -153,7 +154,6 @@
             this.label2.Size = new System.Drawing.Size(91, 33);
             this.label2.TabIndex = 1;
             this.label2.Text = "E-Mail ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // senha
             // 
@@ -207,11 +207,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox senha;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button login;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Cadastro;
     }
 }
 
