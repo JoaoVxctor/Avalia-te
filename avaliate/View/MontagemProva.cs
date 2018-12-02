@@ -136,21 +136,58 @@ namespace avaliate
         {
             int i=0;
             var fonte =  new Font("Times New Roman", 14);
-           
+            var cabecalho = pictureBox1.Height;
+
+            float x = 10.0F;
+            float y = 10.0F;
+            float width = 810;
+            float height = 450;
+
+
+            float rx = 10.0F;
+            float ry = 50.0F;
+            float rwidth = 810;
+            float rheight = 450;
+
+
+            float tx = 10.0F;
+            float ty = 140.0F;
+            float twidth = 810;
+            float theight = 450;
+
+
 
             //           Bitmap bm = new Bitmap(2480, 800);
             //          pictureBox1.DrawToBitmap(bm, new Rectangle(100, 0, pictureBox1.Width, pictureBox1.Height
-            e.Graphics.DrawImage(pictureBox1.Image, 0, 0, 825, 450 );
+            try
+            {
+                e.Graphics.DrawImage(pictureBox1.Image, 0, 0, 825, 450);
+               y +=pictureBox1.Image.Height;
+            }
+            catch
+            {
+                MessageBox.Show("Sem cabeçalho");
+            }
+
             //              bm.Dispose();
 
-            using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
             {
                 conn.Open();
-
+                
                 foreach (Questao item in listBox2.Items)
                 {
+                   
+                    RectangleF drawRect = new RectangleF(x, y, width, height);
+                    RectangleF rdrawRect = new RectangleF(rx, ry, rwidth, rheight);
+                    RectangleF tdrawRect = new RectangleF(tx, ty, twidth, theight);
 
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT enunciado FROM questoes WHERE id = @id", conn))
+                    StringFormat drawFormat = new StringFormat();
+                    drawFormat.Alignment = StringAlignment.Near;
+
+
+
+                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT titulo,enunciado, resposta FROM questoes WHERE id = @id", conn))
                     {
                         cmd.Parameters.AddWithValue("id", Convert.ToInt32(listBox2.Items[i].ToString()));
 
@@ -158,14 +195,25 @@ namespace avaliate
                         {
                             while (reader.Read())
                             {
-                                string s = Convert.ToString(i + 1) + "- " + reader.GetString(0) + "\n\n";
+                                string s = Convert.ToString(i + 1) + " - " + reader.GetString(0) + "\n\n";
+                                string b =  " \t\t " + reader.GetString(1) + "\n\n";
+                                string c = " \n\t " + reader.GetString(2) + "\n\n";
 
-                                e.Graphics.DrawString(s, fonte, Brushes.Black, new PointF(100, i * 50 + pictureBox1.Image.Height));
+
+                                e.Graphics.DrawString(s, fonte, Brushes.Black, drawRect, drawFormat);
+                                e.Graphics.DrawString(b, fonte, Brushes.Black, rdrawRect, drawFormat);
+                                e.Graphics.DrawString(c, fonte, Brushes.Black, tdrawRect, drawFormat);
+
+
+
                             }
 
                         }
                     }
                     i++;
+                    y += height;
+                    ry += rheight;
+                    ty += theight;
                 }
             }
             
