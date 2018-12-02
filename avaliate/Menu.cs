@@ -29,5 +29,21 @@ namespace avaliate
             cadastrarQuestoes.Closed += (s, args) => this.Close();
             cadastrarQuestoes.Show();
         }
+
+        private void montarProva_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var montagemProva = new MontagemProva();
+            montagemProva.Closed += (s, args) => this.Close();
+            montagemProva.Show();
+        }
+
+        private void sair_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var index = new Index();
+            index.Closed += (s, args) => this.Close();
+            index.Show();
+        }
     }
 }

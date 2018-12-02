@@ -82,6 +82,7 @@
             this.sair.TabIndex = 4;
             this.sair.Text = "Sair";
             this.sair.UseVisualStyleBackColor = false;
+            this.sair.Click += new System.EventHandler(this.sair_Click);
             // 
             // pictureBox1
             // 
@@ -149,6 +150,7 @@
             this.montarProva.TabIndex = 1;
             this.montarProva.Text = "Montar \r\nProva";
             this.montarProva.UseVisualStyleBackColor = true;
+            this.montarProva.Click += new System.EventHandler(this.montarProva_Click);
             // 
             // cadastrarQuestoes
             // 

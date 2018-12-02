@@ -98,5 +98,13 @@ namespace avaliate
 
             return true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var menu = new Menu();
+            menu.Closed += (s, args) => this.Close();
+            menu.Show();
+        }
     }
 }

@@ -114,6 +114,22 @@ namespace avaliate
                                 cmd.Parameters.AddWithValue("materia", materia.GetItemText(materia.SelectedItem).Trim());
                                 cmd.Parameters.AddWithValue("nivelensino", nivelEnsino.GetItemText(nivelEnsino.SelectedItem).Trim());
 
+                                using (NpgsqlCommand sel = new NpgsqlCommand("SELECT professor.id, conjuncao.fk_materia, conjuncao.fk_nivelensino FROM professor, " +
+                                    "conjuncao WHERE email = @email AND fk_professor = (SELECT id FROM professor WHERE email = @email); ", conn))
+                                {
+                                    sel.Parameters.AddWithValue("email", email.Text);
+
+                                    using (NpgsqlDataReader reader = sel.ExecuteReader())
+                                    {
+                                        while (reader.Read())
+                                        {
+                                            LoginInfo.id = reader.GetInt32(0);
+                                            LoginInfo.materia = reader.GetInt32(1);
+                                            LoginInfo.nivelEnsino = reader.GetInt32(2);
+                                        }
+                                    }
+                                }
+
                                 cmd.ExecuteNonQuery();
                             }
                         }
@@ -121,6 +137,8 @@ namespace avaliate
                     }
                     if (!contaExiste)
                     {
+                        LoginInfo.nome = nome.Text;
+                      
                         MessageBox.Show("Cadastro feito com sucesso");
                         this.Hide();
                         var menu = new Menu();

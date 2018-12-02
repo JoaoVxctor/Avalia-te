@@ -32,6 +32,8 @@
             this.gradientPanel1 = new avaliate.gradientPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.titulo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.resposta = new System.Windows.Forms.RichTextBox();
@@ -40,8 +42,6 @@
             this.enunciado = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tipoQuestao = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.titulo = new System.Windows.Forms.TextBox();
             this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -92,6 +92,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastrar Questão";
             // 
+            // titulo
+            // 
+            this.titulo.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo.Location = new System.Drawing.Point(257, 315);
+            this.titulo.Name = "titulo";
+            this.titulo.Size = new System.Drawing.Size(430, 40);
+            this.titulo.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(35, 315);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(216, 33);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Título da Questão:";
+            // 
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 2;
@@ -102,6 +121,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -178,25 +198,6 @@
             this.tipoQuestao.Name = "tipoQuestao";
             this.tipoQuestao.Size = new System.Drawing.Size(646, 41);
             this.tipoQuestao.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(35, 315);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(216, 33);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Título da Questão:";
-            // 
-            // titulo
-            // 
-            this.titulo.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo.Location = new System.Drawing.Point(257, 315);
-            this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(430, 40);
-            this.titulo.TabIndex = 10;
             // 
             // CadastroQuestao
             // 
