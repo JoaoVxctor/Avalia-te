@@ -62,55 +62,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cadastro.cs">
+    <Compile Include="View\cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cadastro.Designer.cs">
+    <Compile Include="View\cadastro.Designer.cs">
       <DependentUpon>cadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroQuestao.cs">
+    <Compile Include="View\CadastroQuestao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroQuestao.Designer.cs">
+    <Compile Include="View\CadastroQuestao.Designer.cs">
       <DependentUpon>CadastroQuestao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Index.cs">
+    <Compile Include="Conexao.cs" />
+    <Compile Include="View\Index.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Index.Designer.cs">
+    <Compile Include="View\Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
     <Compile Include="gradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="LoginInfo.cs" />
-    <Compile Include="Menu.cs">
+    <Compile Include="View\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="View\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="MontagemProva.cs">
+    <Compile Include="View\MontagemProva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MontagemProva.Designer.cs">
+    <Compile Include="View\MontagemProva.Designer.cs">
       <DependentUpon>MontagemProva.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="cadastro.resx">
+    <EmbeddedResource Include="View\cadastro.resx">
       <DependentUpon>cadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroQuestao.resx">
+    <EmbeddedResource Include="View\CadastroQuestao.resx">
       <DependentUpon>CadastroQuestao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Index.resx">
+    <EmbeddedResource Include="View\Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="View\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MontagemProva.resx">
+    <EmbeddedResource Include="View\MontagemProva.resx">
       <DependentUpon>MontagemProva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -136,5 +137,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
