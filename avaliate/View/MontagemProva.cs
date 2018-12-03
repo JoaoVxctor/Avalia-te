@@ -143,7 +143,7 @@ namespace avaliate
         {
             doc = new Document(PageSize.A4);
             int i = 0;
-            var fonte = iTextSharp.text.FontFactory.GetFont("Times New Roman", 14);
+            iTextSharp.text.Font fonte = FontFactory.GetFont("Consolas", 12);
 
             folderBrowserDialog1.ShowDialog();
             var path = folderBrowserDialog1.SelectedPath.ToString()+"/" ;
@@ -160,12 +160,20 @@ namespace avaliate
                 using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
                 {
                     conn.Open();
-                    iTextSharp.text.Image pdfImage = iTextSharp.text.Image.GetInstance(cabecalho, System.Drawing.Imaging.ImageFormat.Png);
-
                     doc.Open();
-                    pdfImage.ScaleToFit(525, 480);
-                    doc.Add(pdfImage);
+                    try
+                    {
+                        iTextSharp.text.Image pdfImage = iTextSharp.text.Image.GetInstance(cabecalho, System.Drawing.Imaging.ImageFormat.Png);
 
+                        pdfImage.ScaleToFit(510,240);
+                        pdfImage.SetAbsolutePosition(0,842);
+                        doc.Add(pdfImage);
+
+                    }
+                    catch { MessageBox.Show("Sem cabeçalho"); }
+                    
+  //                 pdfImage.SetAbsolutePosition(Top);
+                   
                     foreach (Questao item in listBox2.Items)
                     {
       
