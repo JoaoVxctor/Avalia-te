@@ -33,8 +33,44 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Control.Draggable, Version=1.0.5049.269, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Control.Draggable.1.0.5049.269\lib\net35-Client\Control.Draggable.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.Controls.Web, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.Controls.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.Extensions.MVC, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.Extensions.MVC.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.PDFPrinter, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.PDFPrinter.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.Windows.PDFBookmarks, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.Windows.PDFBookmarks.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.Windows.PDFViewer, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.Windows.PDFViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.XtremeFontEngine.4.0, Version=1.0.2056.447, Culture=neutral, PublicKeyToken=461de9da64be3a84, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.XtremeFontEngine.4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.XtremeImageEngine.4.0, Version=12.0.1724.135, Culture=neutral, PublicKeyToken=67e9a3a7c22f1690, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.XtremeImageEngine.4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zlib, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Ionic.Zlib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql, Version=4.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.4.0.3\lib\net451\Npgsql.dll</HintPath>
@@ -75,6 +111,12 @@
       <DependentUpon>CadastroQuestao.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Conexao.cs" />
+    <Compile Include="View\GerenciarProvas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerenciarProvas.Designer.cs">
+      <DependentUpon>GerenciarProvas.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Index.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +147,9 @@
     <EmbeddedResource Include="View\CadastroQuestao.resx">
       <DependentUpon>CadastroQuestao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\GerenciarProvas.resx">
+      <DependentUpon>GerenciarProvas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +169,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Control\packages.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

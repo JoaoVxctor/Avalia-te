@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 
+using iTextSharp;//E A BIBLIOTECA ITEXTSHARP E SUAS EXTENÇÕES
+using iTextSharp.text;//ESTENSAO 1 (TEXT)
+using iTextSharp.text.pdf;//ESTENSAO 2 (PDF)
+using System.IO;
+using Image = System.Drawing.Image;
+
 namespace avaliate
 {
     public partial class MontagemProva : Form
@@ -17,19 +23,18 @@ namespace avaliate
 
         Conexao con = new Conexao();
 
+        Document doc;
         int index = 0;
 
         public MontagemProva()
         {
             InitializeComponent();
-            //string[] items = new string[] {"QUESTÃO 1","QUESTÃO 2","QUESTÃO 3","QUESTÃO 4" };
-            //listBox1.Items.AddRange(items);
 
-            using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
+          using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
             {
                 conn.Open();
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT id, titulo FROM questoes WHERE id IN(" +
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT id, titulo,enunciado FROM questoes WHERE id IN(" +
                     "SELECT fk_questao FROM questao_materia_nivelensino WHERE fk_materia = @materia AND fk_nivelensino = @nivelensino)", conn))
                 {
                     cmd.Parameters.AddWithValue("materia", LoginInfo.materia);
@@ -132,97 +137,74 @@ namespace avaliate
             }
         }
 
-        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            int i=0;
-            var fonte =  new Font("Times New Roman", 14);
-            var cabecalho = pictureBox1.Height;
 
-            float x = 10.0F;
-            float y = 10.0F;
-            float width = 810;
-            float height = 450;
-
-
-            float rx = 10.0F;
-            float ry = 50.0F;
-            float rwidth = 810;
-            float rheight = 450;
-
-
-            float tx = 10.0F;
-            float ty = 140.0F;
-            float twidth = 810;
-            float theight = 450;
-
-
-
-            //           Bitmap bm = new Bitmap(2480, 800);
-            //          pictureBox1.DrawToBitmap(bm, new Rectangle(100, 0, pictureBox1.Width, pictureBox1.Height
-            try
-            {
-                e.Graphics.DrawImage(pictureBox1.Image, 0, 0, 825, 450);
-               y +=pictureBox1.Image.Height;
-            }
-            catch
-            {
-                MessageBox.Show("Sem cabeçalho");
-            }
-
-            //              bm.Dispose();
-
-            using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
-            {
-                conn.Open();
-                
-                foreach (Questao item in listBox2.Items)
-                {
-                   
-                    RectangleF drawRect = new RectangleF(x, y, width, height);
-                    RectangleF rdrawRect = new RectangleF(rx, ry, rwidth, rheight);
-                    RectangleF tdrawRect = new RectangleF(tx, ty, twidth, theight);
-
-                    StringFormat drawFormat = new StringFormat();
-                    drawFormat.Alignment = StringAlignment.Near;
-
-
-
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT titulo,enunciado, resposta FROM questoes WHERE id = @id", conn))
-                    {
-                        cmd.Parameters.AddWithValue("id", Convert.ToInt32(listBox2.Items[i].ToString()));
-
-                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                string s = Convert.ToString(i + 1) + " - " + reader.GetString(0) + "\n\n";
-                                string b =  " \t\t " + reader.GetString(1) + "\n\n";
-                                string c = " \n\t " + reader.GetString(2) + "\n\n";
-
-
-                                e.Graphics.DrawString(s, fonte, Brushes.Black, drawRect, drawFormat);
-                                e.Graphics.DrawString(b, fonte, Brushes.Black, rdrawRect, drawFormat);
-                                e.Graphics.DrawString(c, fonte, Brushes.Black, tdrawRect, drawFormat);
-
-
-
-                            }
-
-                        }
-                    }
-                    i++;
-                    y += height;
-                    ry += rheight;
-                    ty += theight;
-                }
-            }
-            
-        }
 
         private void imprimir_Click(object sender, EventArgs e)
         {
-            if (printPreviewDialog.ShowDialog() == DialogResult.OK)
-                printDocument.Print();
+            doc = new Document(PageSize.A4);
+            int i = 0;
+            var fonte = iTextSharp.text.FontFactory.GetFont("Times New Roman", 14);
+
+            folderBrowserDialog1.ShowDialog();
+            var path = folderBrowserDialog1.SelectedPath.ToString()+"/" ;
+            var archiveName = nomeArch.Text + ".pdf";
+            var output = path + archiveName;
+
+            var cabecalho = pictureBox1.Image;
+
+            using (var fileStream = new System.IO.FileStream(output, System.IO.FileMode.Create, System.IO.FileAccess.Write, System.IO.FileShare.None))
+            {
+                PdfWriter writer = PdfWriter.GetInstance(doc, fileStream);
+
+
+                using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
+                {
+                    conn.Open();
+                    iTextSharp.text.Image pdfImage = iTextSharp.text.Image.GetInstance(cabecalho, System.Drawing.Imaging.ImageFormat.Png);
+
+                    doc.Open();
+                    pdfImage.ScaleToFit(525, 480);
+                    doc.Add(pdfImage);
+
+                    foreach (Questao item in listBox2.Items)
+                    {
+      
+
+                        using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT titulo,enunciado, resposta FROM questoes WHERE id = @id", conn))
+                        {
+                            cmd.Parameters.AddWithValue("id", Convert.ToInt32(listBox2.Items[i].ToString()));
+
+                            using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    string s = Convert.ToString(i + 1) + " - " + reader.GetString(0) + "\n\n";
+                                    string t = " \t\t " + reader.GetString(1) + "\n\n";
+                                    string u = " \n\t " + reader.GetString(2) + "\n\n";
+
+                                    Paragraph a = new Paragraph(s, fonte);
+                                    Paragraph b = new Paragraph(t, fonte);
+                                    Paragraph c = new Paragraph(u, fonte);
+
+
+                                    doc.Add(a);
+                                    doc.Add(b);
+                                    doc.Add(c);
+
+                                }
+
+                            }
+                        }
+                        
+                        i++;
+                    
+                    }
+                    doc.Close();
+                }
+
+
+            }
+            
         }
 
         private void header_Click(object sender, EventArgs e)
@@ -232,7 +214,7 @@ namespace avaliate
                 Filter =  "PNG|*png" , ValidateNames = true 
             })
             {
-                if (ofd.ShowDialog() == DialogResult.OK)
+                if (ofd.ShowDialog() == DialogResult.OK) { }
                     pictureBox1.Image = Image.FromFile(ofd.FileName);
             }
         }
@@ -254,6 +236,11 @@ namespace avaliate
             var menu = new Menu();
             menu.Closed += (s, args) => this.Close();
             menu.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
