@@ -1,6 +1,6 @@
-﻿namespace avaliate
+﻿namespace avaliate.View
 {
-    partial class CadastroQuestao
+    partial class GerenciarQuestoes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroQuestao));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarQuestoes));
             this.gradientPanel1 = new avaliate.gradientPanel();
+            this.excluir = new System.Windows.Forms.Button();
+            this.labelQuestao = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.titulo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Atualizar = new System.Windows.Forms.Button();
             this.resposta = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.enunciado = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tipoQuestao = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gradientPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -51,13 +54,44 @@
             // 
             this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(59)))), ((int)(((byte)(209)))));
             this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.gradientPanel1.Controls.Add(this.excluir);
+            this.gradientPanel1.Controls.Add(this.labelQuestao);
             this.gradientPanel1.Controls.Add(this.groupBox1);
+            this.gradientPanel1.Controls.Add(this.comboBox1);
             this.gradientPanel1.Controls.Add(this.pictureBox1);
             this.gradientPanel1.Location = new System.Drawing.Point(1, 0);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1085, 774);
+            this.gradientPanel1.Size = new System.Drawing.Size(1102, 666);
             this.gradientPanel1.TabIndex = 0;
-            this.gradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gradientPanel1_Paint);
+            // 
+            // excluir
+            // 
+            this.excluir.BackColor = System.Drawing.Color.White;
+            this.excluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.excluir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.excluir.FlatAppearance.BorderSize = 2;
+            this.excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.excluir.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.excluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(59)))), ((int)(((byte)(209)))));
+            this.excluir.Location = new System.Drawing.Point(918, 169);
+            this.excluir.Name = "excluir";
+            this.excluir.Size = new System.Drawing.Size(138, 42);
+            this.excluir.TabIndex = 11;
+            this.excluir.Text = "Excluir";
+            this.excluir.UseVisualStyleBackColor = false;
+            this.excluir.Click += new System.EventHandler(this.excluir_Click);
+            // 
+            // labelQuestao
+            // 
+            this.labelQuestao.AutoSize = true;
+            this.labelQuestao.BackColor = System.Drawing.Color.Transparent;
+            this.labelQuestao.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuestao.ForeColor = System.Drawing.Color.White;
+            this.labelQuestao.Location = new System.Drawing.Point(21, 170);
+            this.labelQuestao.Name = "labelQuestao";
+            this.labelQuestao.Size = new System.Drawing.Size(226, 33);
+            this.labelQuestao.TabIndex = 11;
+            this.labelQuestao.Text = "Titulo da Questão : ";
             // 
             // groupBox1
             // 
@@ -65,7 +99,7 @@
             this.groupBox1.Controls.Add(this.titulo);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.Atualizar);
             this.groupBox1.Controls.Add(this.resposta);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -74,12 +108,12 @@
             this.groupBox1.Controls.Add(this.tipoQuestao);
             this.groupBox1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(11, 142);
+            this.groupBox1.Location = new System.Drawing.Point(11, 215);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1040, 434);
-            this.groupBox1.TabIndex = 11;
+            this.groupBox1.Size = new System.Drawing.Size(1060, 434);
+            this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cadastrar Questão";
+            this.groupBox1.Text = "Atualizar Questão";
             // 
             // titulo
             // 
@@ -104,25 +138,25 @@
             // 
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(516, 328);
+            this.button2.Location = new System.Drawing.Point(543, 347);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 78);
+            this.button2.Size = new System.Drawing.Size(225, 62);
             this.button2.TabIndex = 8;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // Atualizar
             // 
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(766, 328);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 78);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Cadastrar Questão";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.Atualizar.FlatAppearance.BorderSize = 2;
+            this.Atualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Atualizar.Location = new System.Drawing.Point(785, 347);
+            this.Atualizar.Name = "Atualizar";
+            this.Atualizar.Size = new System.Drawing.Size(225, 62);
+            this.Atualizar.TabIndex = 7;
+            this.Atualizar.Text = "Atualizar Questão";
+            this.Atualizar.UseVisualStyleBackColor = true;
+            this.Atualizar.Click += new System.EventHandler(this.Atualizar_Click);
             // 
             // resposta
             // 
@@ -188,27 +222,37 @@
             this.tipoQuestao.Size = new System.Drawing.Size(418, 41);
             this.tipoQuestao.TabIndex = 1;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(257, 170);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(655, 41);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(327, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(318, 42);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(556, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // CadastroQuestao
+            // GerenciarQuestoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 619);
+            this.ClientSize = new System.Drawing.Size(1084, 661);
             this.Controls.Add(this.gradientPanel1);
-            this.Name = "CadastroQuestao";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.CadastroQuestao_Load);
+            this.Name = "GerenciarQuestoes";
+            this.Text = "Gerenciar Questões";
             this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -219,17 +263,20 @@
         #endregion
 
         private gradientPanel gradientPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox titulo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Atualizar;
         private System.Windows.Forms.RichTextBox resposta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox enunciado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox tipoQuestao;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button excluir;
+        private System.Windows.Forms.Label labelQuestao;
     }
 }

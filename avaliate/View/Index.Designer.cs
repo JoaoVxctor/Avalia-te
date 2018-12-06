@@ -124,9 +124,9 @@
             this.email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.email.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(59)))), ((int)(((byte)(209)))));
-            this.email.Location = new System.Drawing.Point(134, 95);
+            this.email.Location = new System.Drawing.Point(31, 111);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(388, 40);
+            this.email.Size = new System.Drawing.Size(491, 40);
             this.email.TabIndex = 2;
             // 
             // login
@@ -149,19 +149,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 98);
+            this.label2.Location = new System.Drawing.Point(25, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 33);
             this.label2.TabIndex = 1;
-            this.label2.Text = "E-Mail ";
+            this.label2.Text = "E-mail ";
             // 
             // senha
             // 
             this.senha.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.senha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(59)))), ((int)(((byte)(209)))));
-            this.senha.Location = new System.Drawing.Point(134, 171);
+            this.senha.Location = new System.Drawing.Point(31, 199);
             this.senha.Name = "senha";
-            this.senha.Size = new System.Drawing.Size(388, 40);
+            this.senha.Size = new System.Drawing.Size(491, 40);
             this.senha.TabIndex = 4;
             this.senha.UseSystemPasswordChar = true;
             // 
@@ -169,7 +169,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 174);
+            this.label3.Location = new System.Drawing.Point(25, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 33);
             this.label3.TabIndex = 3;

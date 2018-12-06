@@ -55,6 +55,7 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(712, 618);
             this.gradientPanel1.TabIndex = 0;
+            this.gradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gradientPanel1_Paint);
             // 
             // greetingMessage
             // 
@@ -62,7 +63,7 @@
             this.greetingMessage.BackColor = System.Drawing.Color.Transparent;
             this.greetingMessage.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.greetingMessage.ForeColor = System.Drawing.Color.Gainsboro;
-            this.greetingMessage.Location = new System.Drawing.Point(471, 147);
+            this.greetingMessage.Location = new System.Drawing.Point(131, 151);
             this.greetingMessage.Name = "greetingMessage";
             this.greetingMessage.Size = new System.Drawing.Size(0, 29);
             this.greetingMessage.TabIndex = 9;
@@ -134,8 +135,9 @@
             this.salvarProva.Name = "salvarProva";
             this.salvarProva.Size = new System.Drawing.Size(189, 109);
             this.salvarProva.TabIndex = 2;
-            this.salvarProva.Text = "Gerenciar Provas";
+            this.salvarProva.Text = "Gerenciar Questões";
             this.salvarProva.UseVisualStyleBackColor = true;
+            this.salvarProva.Click += new System.EventHandler(this.salvarProva_Click);
             // 
             // montarProva
             // 

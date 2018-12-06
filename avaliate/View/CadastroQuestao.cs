@@ -33,12 +33,38 @@ namespace avaliate
 
         private void button1_Click(object sender, EventArgs e)
         {
+         
+        }
+
+        private Boolean verificaCampos()
+        {
+            if (tipoQuestao.GetItemText(tipoQuestao.SelectedItem) == null || tipoQuestao.GetItemText(tipoQuestao.SelectedItem) == "")
+                return false;
+
+            if (enunciado.Text == null || enunciado.Text == "")
+                return false;
+
+            if (titulo.Text == null || titulo.Text == "")
+                return false;
+
+
+            return true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             if (!verificaCampos())
             {
                 MessageBox.Show("Por favor, preencha todos os campos antes de prosseguir");
             }
             else
             {
+
                 using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
                 {
                     conn.Open();
@@ -58,49 +84,33 @@ namespace avaliate
 
                         cmd.ExecuteNonQuery();
                     }
+                   
                 }
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
                 {
                     conn.Open();
-
                     using (NpgsqlCommand cmd = new NpgsqlCommand())
                     {
                         cmd.Connection = conn;
 
-                        cmd.CommandText = "INSERT INTO questao_materia_nivelensino (fk_questao, fk_materia, fk_nivelensino)" +
-                                "VALUES ( (SELECT id FROM questoes WHERE fk_professor = @fk_professor AND enunciado = @enunciado), @fk_materia, @fk_nivelensino)";
+                        cmd.CommandText = "INSERT INTO conjuncao (fk_questao, fk_materia, fk_nivelensino)" +
+                                "VALUES ( (SELECT id FROM questoes WHERE fk_professor = @fk_professor AND titulo = @titulo), @fk_materia, @fk_nivelensino)";
 
                         cmd.Parameters.AddWithValue("fk_professor", LoginInfo.id);
                         cmd.Parameters.AddWithValue("fk_materia", LoginInfo.materia);
-                        cmd.Parameters.AddWithValue("enunciado", enunciado.Text);
+                        cmd.Parameters.AddWithValue("titulo", titulo.Text);
                         cmd.Parameters.AddWithValue("fk_nivelensino", LoginInfo.nivelEnsino);
 
                         cmd.ExecuteNonQuery();
                     }
                 }
                 MessageBox.Show("Questão cadastrada com sucesso");
+                con.cleanCampos(tipoQuestao, titulo, enunciado, resposta, tipoQuestao);
             }
         }
 
-        private Boolean verificaCampos()
-        {
-            if (tipoQuestao.GetItemText(tipoQuestao.SelectedItem) == null || tipoQuestao.GetItemText(tipoQuestao.SelectedItem) == "")
-                return false;
-
-            if (enunciado.Text == null || enunciado.Text == "")
-                return false;
-
-            if (titulo.Text == null || titulo.Text == "")
-                return false;
-
-//            if (resposta.Text == null || resposta.Text == "")
- //               return false;
-
-            return true;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             var menu = new Menu();

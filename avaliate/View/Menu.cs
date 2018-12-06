@@ -1,4 +1,5 @@
-﻿using System;
+﻿using avaliate.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace avaliate
         public Menu()
         {
             InitializeComponent();
+
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -44,6 +46,19 @@ namespace avaliate
             var index = new Index();
             index.Closed += (s, args) => this.Close();
             index.Show();
+        }
+
+        private void salvarProva_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var gerenciarQuestoes = new GerenciarQuestoes();
+            gerenciarQuestoes.Closed += (s, args) => this.Close();
+            gerenciarQuestoes.Show();
+        }
+
+        private void gradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

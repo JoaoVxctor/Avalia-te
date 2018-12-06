@@ -13,8 +13,10 @@ CREATE TABLE IF NOT EXISTS questoes(
 	tipo char (34),
 	enunciado char (500),
 	resposta char (400),
- titulo char(40),	CONSTRAINT fk_professor FOREIGN KEY (fk_professor)
+	 titulo char(40),	
+	CONSTRAINT fk_professor FOREIGN KEY (fk_professor)
 	REFERENCES professor(id)
+	ON DELETE CASCADE
 	
 	
 );	
@@ -28,21 +30,26 @@ CREATE TABLE IF NOT EXISTS nivelEnsino(
 	id SERIAL NOT NULL PRIMARY KEY,
 	nome char (40)
 );
-
-CREATE TABLE IF NOT EXISTS conjuncao(
-	id SERIAL NOT NULL PRIMARY KEY,
-	fk_professor int,
+create table conjuncao(
+	id serial primary key,
+	fk_questao int,
 	fk_materia int,
-	fk_nivelEnsino int,
+	fk_nivelensino int,
+	fk_professor int,
 	
-	CONSTRAINT fk_professor FOREIGN KEY (fk_professor)
-	REFERENCES professor(id),
-	CONSTRAINT fk_materia FOREIGN KEY (fk_materia)
-	REFERENCES materia(id),
-	CONSTRAINT fk_nivelEnsino FOREIGN KEY (fk_nivelEnsino)
-	REFERENCES nivelEnsino(id)
-);
+	foreign key (fk_questao) references questoes(id)
+	ON DELETE CASCADE,
 
+	foreign key (fk_materia) references materia(id)
+	ON DELETE CASCADE,
+
+	foreign key (fk_nivelensino) references nivelensino(id)
+	ON DELETE CASCADE,
+
+	foreign key (fk_professor) references professor(id)
+	ON DELETE CASCADE
+
+);
 
 --------------------- INSERTS ----------------------------
 INSERT INTO professor( nome, email, senha) VALUES 
@@ -52,12 +59,12 @@ INSERT INTO professor( nome, email, senha) VALUES
 ;
 
 INSERT INTO materia(nome) VALUES 
-('fisica'),
-('quimica'),
-('matematica'),
-('educação fisica'),
-('portugues'),
-('biologia');
+('Física'),
+('Química'),
+('Matêmatica'),
+('Educação Física'),
+('Portuês'),
+('Biologia');
 
 INSERT INTO nivelEnsino(nome) VALUES 
 ('Ensino Medio'),

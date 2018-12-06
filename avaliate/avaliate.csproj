@@ -98,6 +98,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\Questao.cs" />
+    <Compile Include="Control\ToPrint.cs" />
     <Compile Include="View\cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,11 +113,11 @@
       <DependentUpon>CadastroQuestao.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Conexao.cs" />
-    <Compile Include="View\GerenciarProvas.cs">
+    <Compile Include="View\GerenciarQuestoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\GerenciarProvas.Designer.cs">
-      <DependentUpon>GerenciarProvas.cs</DependentUpon>
+    <Compile Include="View\GerenciarQuestoes.Designer.cs">
+      <DependentUpon>GerenciarQuestoes.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Index.cs">
       <SubType>Form</SubType>
@@ -147,8 +149,8 @@
     <EmbeddedResource Include="View\CadastroQuestao.resx">
       <DependentUpon>CadastroQuestao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\GerenciarProvas.resx">
-      <DependentUpon>GerenciarProvas.cs</DependentUpon>
+    <EmbeddedResource Include="View\GerenciarQuestoes.resx">
+      <DependentUpon>GerenciarQuestoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Index.resx">
       <DependentUpon>Index.cs</DependentUpon>

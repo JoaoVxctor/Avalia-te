@@ -14,6 +14,7 @@ using iTextSharp.text;//ESTENSAO 1 (TEXT)
 using iTextSharp.text.pdf;//ESTENSAO 2 (PDF)
 using System.IO;
 using Image = System.Drawing.Image;
+using avaliate.Control;
 
 namespace avaliate
 {
@@ -35,7 +36,7 @@ namespace avaliate
                 conn.Open();
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT id, titulo,enunciado FROM questoes WHERE id IN(" +
-                    "SELECT fk_questao FROM questao_materia_nivelensino WHERE fk_materia = @materia AND fk_nivelensino = @nivelensino)", conn))
+                    "SELECT fk_questao FROM conjuncao WHERE fk_materia = @materia AND fk_nivelensino = @nivelensino)", conn))
                 {
                     cmd.Parameters.AddWithValue("materia", LoginInfo.materia);
                     cmd.Parameters.AddWithValue("nivelensino", LoginInfo.nivelEnsino);
@@ -141,78 +142,42 @@ namespace avaliate
 
         private void imprimir_Click(object sender, EventArgs e)
         {
-            doc = new Document(PageSize.A4);
             int i = 0;
-            iTextSharp.text.Font fonte = FontFactory.GetFont("Consolas", 12);
+           
 
-            folderBrowserDialog1.ShowDialog();
-            var path = folderBrowserDialog1.SelectedPath.ToString()+"/" ;
-            var archiveName = nomeArch.Text + ".pdf";
-            var output = path + archiveName;
-
-            var cabecalho = pictureBox1.Image;
-
-            using (var fileStream = new System.IO.FileStream(output, System.IO.FileMode.Create, System.IO.FileAccess.Write, System.IO.FileShare.None))
+            if (nomeArch.Text == null || nomeArch.Text == ""){
+                nomeArch.Focus();
+                nomeArquivoLabel.Text = "É PRECISO SELECIONAR UM NOME";
+            }
+            else if(pictureBox1.Image == null)
             {
-                PdfWriter writer = PdfWriter.GetInstance(doc, fileStream);
+                CabecalhoTxt.Text = "É PRECISO SELECIONAR UM CABECALHO!";
+                header.Focus();
+            }
+            else{
 
+                folderBrowserDialog1.ShowDialog();
+                var path = folderBrowserDialog1.SelectedPath.ToString() + "/";
+                var archiveName = nomeArch.Text + ".pdf";
+                var output = path + archiveName;
+                ToPrint print = new ToPrint();
 
-                using (NpgsqlConnection conn = new NpgsqlConnection(con.getConn()))
-                {
-                    conn.Open();
-                    doc.Open();
-                    try
-                    {
-                        iTextSharp.text.Image pdfImage = iTextSharp.text.Image.GetInstance(cabecalho, System.Drawing.Imaging.ImageFormat.Png);
+                print.imprimir(pictureBox1.Image, output, con, listBox2.Items, doc);
+                pictureBox1.Image = null;
+                nomeArch.Text = null;
+                CabecalhoTxt.Text = "Cabecalho Não Selecionado.";
 
-                        pdfImage.ScaleToFit(510,240);
-                        pdfImage.SetAbsolutePosition(0,842);
-                        doc.Add(pdfImage);
+                while (listBox2.Items.Count > i){
 
-                    }
-                    catch { MessageBox.Show("Sem cabeçalho"); }
-                    
-  //                 pdfImage.SetAbsolutePosition(Top);
-                   
-                    foreach (Questao item in listBox2.Items)
-                    {
-      
-
-                        using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT titulo,enunciado, resposta FROM questoes WHERE id = @id", conn))
-                        {
-                            cmd.Parameters.AddWithValue("id", Convert.ToInt32(listBox2.Items[i].ToString()));
-
-                            using (NpgsqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    string s = Convert.ToString(i + 1) + " - " + reader.GetString(0) + "\n\n";
-                                    string t = " \t\t " + reader.GetString(1) + "\n\n";
-                                    string u = " \n\t " + reader.GetString(2) + "\n\n";
-
-                                    Paragraph a = new Paragraph(s, fonte);
-                                    Paragraph b = new Paragraph(t, fonte);
-                                    Paragraph c = new Paragraph(u, fonte);
-
-
-                                    doc.Add(a);
-                                    doc.Add(b);
-                                    doc.Add(c);
-
-                                }
-
-                            }
-                        }
-                        
-                        i++;
-                    
-                    }
-                    doc.Close();
+                    listBox1.Items.Add(listBox2.Items[i]);
+                
+                    i++;
+                
                 }
 
+                listBox2.Items.Clear();
 
             }
-            
         }
 
         private void header_Click(object sender, EventArgs e)
@@ -224,19 +189,11 @@ namespace avaliate
             {
                 if (ofd.ShowDialog() == DialogResult.OK) { }
                     pictureBox1.Image = Image.FromFile(ofd.FileName);
+                CabecalhoTxt.Text = "Cabecalho Selecionado !";
             }
         }
 
-        public class Questao
-        {
-            public string titulo { get; set; }
-            public string id { get; set; }
 
-            public override string ToString()
-            {
-                return this.id;
-            }
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -248,7 +205,10 @@ namespace avaliate
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            var menu = new Menu();
+            menu.Closed += (s, args) => this.Close();
+            menu.Show();
         }
     }
 }

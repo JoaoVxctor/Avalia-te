@@ -480,7 +480,6 @@ C:\Users\Aluno\Desktop\avalia-te-master\avalia-te-master\avaliate\obj\Debug\aval
 C:\Users\Aluno\Desktop\avalia-te-master\avalia-te-master\avaliate\obj\Debug\avaliate.csproj.CopyComplete
 C:\Users\Aluno\Desktop\avalia-te-master\avalia-te-master\avaliate\obj\Debug\avaliate.exe
 C:\Users\Aluno\Desktop\avalia-te-master\avalia-te-master\avaliate\obj\Debug\avaliate.pdb
-C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.View.GerenciarProvas.resources
 C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\Gnostice.PDFOne.Controls.Web.dll
 C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\Gnostice.PDFOne.dll
@@ -494,3 +493,4 @@ C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\Ionic.Zlib.dll
 C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\itextsharp.dll
 C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\log4net.dll
 C:\Users\Joao\Random Dump\avaliate\avaliate\bin\Debug\itextsharp.xml
+C:\Users\Joao\Random Dump\avaliate\avaliate\obj\Debug\avaliate.View.GerenciarQuestoes.resources

@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MontagemProva));
-            this.gradientPanel1 = new avaliate.gradientPanel();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.gradientPanel1 = new avaliate.gradientPanel();
+            this.CabecalhoTxt = new System.Windows.Forms.Label();
+            this.nomeArquivoLabel = new System.Windows.Forms.Label();
+            this.nomeArch = new System.Windows.Forms.TextBox();
+            this.voltar = new System.Windows.Forms.Button();
             this.header = new System.Windows.Forms.Button();
             this.imprimir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,36 +45,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.nomeArch = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(59)))), ((int)(((byte)(209)))));
-            this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
-            this.gradientPanel1.Controls.Add(this.label2);
-            this.gradientPanel1.Controls.Add(this.nomeArch);
-            this.gradientPanel1.Controls.Add(this.button1);
-            this.gradientPanel1.Controls.Add(this.header);
-            this.gradientPanel1.Controls.Add(this.imprimir);
-            this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Controls.Add(this.groupBox2);
-            this.gradientPanel1.Controls.Add(this.groupBox1);
-            this.gradientPanel1.Controls.Add(this.pictureBox1);
-            this.gradientPanel1.Location = new System.Drawing.Point(-4, -4);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(878, 740);
-            this.gradientPanel1.TabIndex = 0;
-            // 
-            // printDocument
-            // 
- 
             // 
             // printPreviewDialog
             // 
@@ -82,24 +61,75 @@
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
             // 
-            // button1
+            // gradientPanel1
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(452, 669);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 45);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Voltar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(59)))), ((int)(((byte)(209)))));
+            this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.gradientPanel1.Controls.Add(this.CabecalhoTxt);
+            this.gradientPanel1.Controls.Add(this.nomeArquivoLabel);
+            this.gradientPanel1.Controls.Add(this.nomeArch);
+            this.gradientPanel1.Controls.Add(this.voltar);
+            this.gradientPanel1.Controls.Add(this.header);
+            this.gradientPanel1.Controls.Add(this.imprimir);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.groupBox2);
+            this.gradientPanel1.Controls.Add(this.groupBox1);
+            this.gradientPanel1.Controls.Add(this.pictureBox1);
+            this.gradientPanel1.Location = new System.Drawing.Point(-4, -4);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(878, 740);
+            this.gradientPanel1.TabIndex = 0;
+            // 
+            // CabecalhoTxt
+            // 
+            this.CabecalhoTxt.AutoSize = true;
+            this.CabecalhoTxt.BackColor = System.Drawing.Color.Transparent;
+            this.CabecalhoTxt.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CabecalhoTxt.ForeColor = System.Drawing.Color.Gainsboro;
+            this.CabecalhoTxt.Location = new System.Drawing.Point(574, 50);
+            this.CabecalhoTxt.Name = "CabecalhoTxt";
+            this.CabecalhoTxt.Size = new System.Drawing.Size(290, 29);
+            this.CabecalhoTxt.TabIndex = 28;
+            this.CabecalhoTxt.Text = "Cabecalho não Selecionado";
+            // 
+            // nomeArquivoLabel
+            // 
+            this.nomeArquivoLabel.AutoSize = true;
+            this.nomeArquivoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nomeArquivoLabel.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeArquivoLabel.ForeColor = System.Drawing.Color.Gainsboro;
+            this.nomeArquivoLabel.Location = new System.Drawing.Point(24, 55);
+            this.nomeArquivoLabel.Name = "nomeArquivoLabel";
+            this.nomeArquivoLabel.Size = new System.Drawing.Size(186, 29);
+            this.nomeArquivoLabel.TabIndex = 27;
+            this.nomeArquivoLabel.Text = "Nome do arquivo";
+            // 
+            // nomeArch
+            // 
+            this.nomeArch.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeArch.Location = new System.Drawing.Point(29, 87);
+            this.nomeArch.Name = "nomeArch";
+            this.nomeArch.Size = new System.Drawing.Size(476, 40);
+            this.nomeArch.TabIndex = 26;
+            // 
+            // voltar
+            // 
+            this.voltar.AutoSize = true;
+            this.voltar.BackColor = System.Drawing.Color.Transparent;
+            this.voltar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.voltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.voltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.voltar.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.voltar.ForeColor = System.Drawing.Color.White;
+            this.voltar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.voltar.Location = new System.Drawing.Point(452, 669);
+            this.voltar.Name = "voltar";
+            this.voltar.Size = new System.Drawing.Size(195, 45);
+            this.voltar.TabIndex = 24;
+            this.voltar.Text = "Voltar";
+            this.voltar.UseVisualStyleBackColor = false;
+            this.voltar.Click += new System.EventHandler(this.button1_Click);
             // 
             // header
             // 
@@ -112,9 +142,9 @@
             this.header.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.header.ForeColor = System.Drawing.Color.White;
             this.header.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.header.Location = new System.Drawing.Point(589, 87);
+            this.header.Location = new System.Drawing.Point(579, 82);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(206, 45);
+            this.header.Size = new System.Drawing.Size(281, 50);
             this.header.TabIndex = 23;
             this.header.Text = "Selecionar Cabeçalho";
             this.header.UseVisualStyleBackColor = false;
@@ -223,26 +253,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
-            // nomeArch
-            // 
-            this.nomeArch.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeArch.Location = new System.Drawing.Point(54, 87);
-            this.nomeArch.Name = "nomeArch";
-            this.nomeArch.Size = new System.Drawing.Size(476, 40);
-            this.nomeArch.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(49, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 29);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Nome do arquivo";
-            // 
             // MontagemProva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,9 +285,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button header;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button voltar;
         private System.Windows.Forms.TextBox nomeArch;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label nomeArquivoLabel;
+        private System.Windows.Forms.Label CabecalhoTxt;
     }
 }
