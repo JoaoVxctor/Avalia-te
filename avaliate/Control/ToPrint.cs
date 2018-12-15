@@ -24,8 +24,8 @@ namespace avaliate.Control
         public void imprimir(System.Drawing.Image imagem, string output, Conexao con, System.Windows.Forms.ListBox.ObjectCollection itens, Document doc) { 
         doc = new Document(PageSize.A4);
         int i = 0;
-        Font fonte = FontFactory.GetFont("Segoe UI", 10);
-        Font fonteB = FontFactory.GetFont("Comic Sans", 12, Font.BOLD);
+        Font fonte = FontFactory.GetFont("Arial", 10);
+        Font fonteB = FontFactory.GetFont("Arial", 12, Font.BOLD);
 
 
             try
@@ -58,7 +58,7 @@ namespace avaliate.Control
                         {
 
 
-                            using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT titulo,enunciado, resposta FROM questoes WHERE id = @id", conn))
+                            using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT enunciado, resposta FROM questoes WHERE id = @id", conn))
                             {
                                 cmd.Parameters.AddWithValue("id", Convert.ToInt32(itens[i].ToString()));
 
@@ -68,20 +68,16 @@ namespace avaliate.Control
                                     {
                                         string titulo = Convert.ToString(i + 1) + " - " + reader.GetString(0) + "\n\n";
                                         string questao = " \t\t " + reader.GetString(1) + "\n\n";
-                                        string resposta = " \n\t " + reader.GetString(2) + "\n\n";
 
                                         Paragraph a = new Paragraph(titulo);
                                         Paragraph b = new Paragraph(questao);
-                                        Paragraph c = new Paragraph(resposta);
 
                                         a.Font = fonteB;
                                         b.Font = fonte;
-                                        c.Font = fonte;
 
                                         doc.Add(a);
                                         doc.Add(b);
-                                        doc.Add(c);
-
+                                       
                                     }
 
                                 }

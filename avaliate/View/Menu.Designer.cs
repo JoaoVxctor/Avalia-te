@@ -125,6 +125,7 @@
             this.about.TabIndex = 3;
             this.about.Text = "Sobre o Sistema";
             this.about.UseVisualStyleBackColor = true;
+            this.about.Click += new System.EventHandler(this.about_Click);
             // 
             // salvarProva
             // 

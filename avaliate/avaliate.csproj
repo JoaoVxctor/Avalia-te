@@ -100,6 +100,12 @@
   <ItemGroup>
     <Compile Include="Control\Questao.cs" />
     <Compile Include="Control\ToPrint.cs" />
+    <Compile Include="View\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </Compile>
     <Compile Include="Control\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\cadastro.resx">
       <DependentUpon>cadastro.cs</DependentUpon>
     </EmbeddedResource>

@@ -262,6 +262,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "MontagemProva";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MontagemProva";
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();

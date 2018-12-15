@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastro));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.materia = new System.Windows.Forms.ListBox();
             this.voltarMenu = new System.Windows.Forms.Button();
             this.nivelEnsino = new System.Windows.Forms.ListBox();
             this.cadastrar = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel2 = new avaliate.gradientPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.materia = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
@@ -90,13 +90,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro";
             // 
+            // materia
+            // 
+            this.materia.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.materia.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materia.ForeColor = System.Drawing.Color.DimGray;
+            this.materia.FormattingEnabled = true;
+            this.materia.ItemHeight = 33;
+            this.materia.Location = new System.Drawing.Point(31, 191);
+            this.materia.Name = "materia";
+            this.materia.ScrollAlwaysVisible = true;
+            this.materia.Size = new System.Drawing.Size(388, 37);
+            this.materia.TabIndex = 24;
+            this.materia.UseWaitCursor = true;
+            // 
             // voltarMenu
             // 
             this.voltarMenu.AutoSize = true;
             this.voltarMenu.BackColor = System.Drawing.Color.Transparent;
             this.voltarMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.voltarMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
-            this.voltarMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.voltarMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.voltarMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.voltarMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.voltarMenu.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.voltarMenu.ForeColor = System.Drawing.Color.White;
@@ -105,13 +119,14 @@
             this.voltarMenu.Name = "voltarMenu";
             this.voltarMenu.Size = new System.Drawing.Size(195, 45);
             this.voltarMenu.TabIndex = 23;
-            this.voltarMenu.Text = "Cancelar";
+            this.voltarMenu.Text = "Voltar";
             this.voltarMenu.UseVisualStyleBackColor = false;
             this.voltarMenu.Click += new System.EventHandler(this.voltarMenu_Click);
             // 
             // nivelEnsino
             // 
             this.nivelEnsino.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nivelEnsino.ForeColor = System.Drawing.Color.DimGray;
             this.nivelEnsino.FormattingEnabled = true;
             this.nivelEnsino.ItemHeight = 33;
             this.nivelEnsino.Location = new System.Drawing.Point(481, 191);
@@ -126,8 +141,8 @@
             this.cadastrar.AutoSize = true;
             this.cadastrar.BackColor = System.Drawing.Color.Transparent;
             this.cadastrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.cadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
-            this.cadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.cadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.cadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cadastrar.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrar.ForeColor = System.Drawing.Color.White;
@@ -155,7 +170,7 @@
             // confirmarSenha
             // 
             this.confirmarSenha.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmarSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(67)))), ((int)(((byte)(184)))));
+            this.confirmarSenha.ForeColor = System.Drawing.Color.DimGray;
             this.confirmarSenha.Location = new System.Drawing.Point(481, 289);
             this.confirmarSenha.Name = "confirmarSenha";
             this.confirmarSenha.Size = new System.Drawing.Size(388, 40);
@@ -177,7 +192,7 @@
             // senha
             // 
             this.senha.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senha.ForeColor = System.Drawing.Color.Gray;
+            this.senha.ForeColor = System.Drawing.Color.DimGray;
             this.senha.Location = new System.Drawing.Point(30, 289);
             this.senha.Name = "senha";
             this.senha.Size = new System.Drawing.Size(388, 40);
@@ -199,7 +214,7 @@
             // email
             // 
             this.email.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email.ForeColor = System.Drawing.Color.Gray;
+            this.email.ForeColor = System.Drawing.Color.DimGray;
             this.email.Location = new System.Drawing.Point(481, 93);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(388, 40);
@@ -221,7 +236,7 @@
             // nome
             // 
             this.nome.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nome.ForeColor = System.Drawing.Color.Gray;
+            this.nome.ForeColor = System.Drawing.Color.DimGray;
             this.nome.Location = new System.Drawing.Point(31, 93);
             this.nome.Name = "nome";
             this.nome.Size = new System.Drawing.Size(388, 40);
@@ -274,18 +289,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
-            // 
-            // materia
-            // 
-            this.materia.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materia.FormattingEnabled = true;
-            this.materia.ItemHeight = 33;
-            this.materia.Location = new System.Drawing.Point(31, 191);
-            this.materia.Name = "materia";
-            this.materia.ScrollAlwaysVisible = true;
-            this.materia.Size = new System.Drawing.Size(388, 37);
-            this.materia.TabIndex = 24;
-            this.materia.UseWaitCursor = true;
             // 
             // cadastro
             // 

@@ -80,6 +80,8 @@
             this.Cadastro.BackColor = System.Drawing.Color.Transparent;
             this.Cadastro.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Cadastro.FlatAppearance.BorderSize = 2;
+            this.Cadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Cadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Cadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cadastro.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cadastro.ForeColor = System.Drawing.Color.White;
@@ -123,7 +125,7 @@
             // 
             this.email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.email.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(59)))), ((int)(((byte)(209)))));
+            this.email.ForeColor = System.Drawing.Color.DimGray;
             this.email.Location = new System.Drawing.Point(31, 111);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(491, 40);
@@ -134,10 +136,12 @@
             this.login.BackColor = System.Drawing.Color.Transparent;
             this.login.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.login.FlatAppearance.BorderSize = 2;
+            this.login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login.ForeColor = System.Drawing.Color.Transparent;
-            this.login.Location = new System.Drawing.Point(195, 267);
+            this.login.Location = new System.Drawing.Point(204, 268);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(143, 49);
             this.login.TabIndex = 5;
@@ -158,7 +162,7 @@
             // senha
             // 
             this.senha.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(59)))), ((int)(((byte)(209)))));
+            this.senha.ForeColor = System.Drawing.Color.DimGray;
             this.senha.Location = new System.Drawing.Point(31, 199);
             this.senha.Name = "senha";
             this.senha.Size = new System.Drawing.Size(491, 40);

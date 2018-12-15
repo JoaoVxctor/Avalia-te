@@ -102,6 +102,8 @@ namespace avaliate
                                 cmd.CommandText = "INSERT INTO professor (nome, email, senha)" +
                                 "VALUES ( @nome, @email, @senha)";
 
+                                
+
                                 cmd.Parameters.AddWithValue("nome", nome.Text);
                                 cmd.Parameters.AddWithValue("email", email.Text);
                                 cmd.Parameters.AddWithValue("senha", senha.Text);
@@ -115,6 +117,8 @@ namespace avaliate
                                 cmd.Parameters.AddWithValue("email", email.Text);
                                 cmd.Parameters.AddWithValue("materia", materia.GetItemText(materia.SelectedItem).Trim());
                                 cmd.Parameters.AddWithValue("nivelensino", nivelEnsino.GetItemText(nivelEnsino.SelectedItem).Trim());
+
+                                cmd.ExecuteNonQuery();
 
                                 using (NpgsqlCommand sel = new NpgsqlCommand("SELECT professor.id, conjuncao.fk_materia, conjuncao.fk_nivelensino FROM professor, " +
                                     "conjuncao WHERE email = @email AND fk_professor = (SELECT id FROM professor WHERE email = @email); ", conn))
@@ -131,8 +135,6 @@ namespace avaliate
                                         }
                                     }
                                 }
-
-                                cmd.ExecuteNonQuery();
                             }
                         }
 

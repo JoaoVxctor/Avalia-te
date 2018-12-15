@@ -16,7 +16,7 @@ namespace avaliate
         Boolean contaExiste = false;
 
         public Conexao() {
-            connString =  @"Host=127.0.0.1;Username=postgres;Password=ipmh61r3;Database=avaliate"; 
+            connString =  @"Host=127.0.0.1;Username=postgres;Password=ifsp;Database=avaliate"; 
            
         }
 

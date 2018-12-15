@@ -60,5 +60,13 @@ namespace avaliate
         {
 
         }
+
+        private void about_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var about = new About();
+            about.Closed += (s, args) => this.Close();
+            about.Show();
+        }
     }
 }
